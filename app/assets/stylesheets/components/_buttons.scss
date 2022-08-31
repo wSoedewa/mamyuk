@@ -1,0 +1,34 @@
+.primary-button {
+  border-radius: 10px;
+  border: 2px solid $gray;
+  background-color: $yellow;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 335px;
+  height: 44px;
+  box-shadow:
+    0.3em 0.3em 0 0 $yellow,
+    inset 0.3em 0.3em 0 0 white;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    box-shadow: none;
+    background-color: $yellow;
+  }
+}
+.secondary-button {
+  border-radius: 10px;
+  border: 2px solid $gray;
+  background-color: $green;
+  width: 335px;
+  height: 44px;
+  box-shadow:
+    0.3em 0.3em 0 0 $green,
+    inset 0.3em 0.3em 0 0 white;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    box-shadow: none;
+    background-color: $green;
+  }
+}
