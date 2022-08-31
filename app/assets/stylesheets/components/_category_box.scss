@@ -1,0 +1,45 @@
+// .button {
+//   display: flex;
+//   background-color: palegoldenrod;
+//   height: 180px;
+//   align-items: center;
+
+//   .buttons {
+//     height: 175px;
+//     width: 175px;
+//     border-radius: 10px;
+//     padding: 10px;
+//   }
+// }
+
+
+.media-scroller {
+  display: grid;
+  gap: 5%;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  // overscroll-behavior-inline: contain;
+}
+
+.media-element{
+  text-align: center;
+  grid-template-rows: min-content;
+
+}
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+.background_category {
+  background-color: #011414;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+  p {
+    margin-bottom: 1px;
+  }
