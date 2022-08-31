@@ -1,56 +1,66 @@
-.primary-button {
+.button-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   border: 2px solid $gray;
-  background-color: $yellow;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 335px;
   height: 44px;
-  box-shadow:
-    0.3em 0.3em 0 0 $yellow,
-    inset 0.3em 0.3em 0 0 white;
   transition: 0.1s ease-in-out;
 
   &:hover {
     box-shadow: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.primary-button {
+  background-color: $yellow;
+  box-shadow:
+    3px 3px 0 0 $yellow,
+    inset 3px 3px 0 0 white;
+
+  &:hover {
     background-color: $yellow;
+  }
+
+  a {
+    color: $gray;
   }
 }
 .secondary-button {
-  border-radius: 10px;
-  border: 2px solid $gray;
   background-color: $green;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  width: 335px;
-  height: 44px;
   box-shadow:
-    0.3em 0.3em 0 0 $green,
-    inset 0.3em 0.3em 0 0 white;
-  transition: 0.1s ease-in-out;
+    3px 3px 0 0 $green,
+    inset 3px 3px 0 0 white;
 
   &:hover {
-    box-shadow: none;
     background-color: $green;
+  }
+
+  a {
+    color: $gray;
   }
 }
 
-.menut-button {
-  border-radius: 10px;
-  border: 2px solid $gray;
-  background-color: $green;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  width: 335px;
-  height: 44px;
+.menu-button {
+  border: 2px solid $black;
+  background-color: $gray;
   box-shadow:
-    0.3em 0.3em 0 0 $green,
-    inset 0.3em 0.3em 0 0 white;
-  transition: 0.1s ease-in-out;
+    3px 3px 0 0 $gray,
+    inset 3px 3px 0 0 white;
 
   &:hover {
-    box-shadow: none;
-    background-color: $green;
+    background-color: $gray;
+  }
+
+  a {
+    color: $yellow;
   }
 }
 
@@ -65,7 +75,9 @@
   margin: 10px;
   width: 70px;
   height: 70px;
-  box-shadow: 3px 3px 0 0 $green, inset 3px 3px 0 0 $white;
+  box-shadow:
+    3px 3px 0 0 $green,
+    inset 3px 3px 0 0 $white;
   transition: 0.1s ease-in-out;
 
   &:hover {
@@ -77,6 +89,7 @@
     color: $white;
   }
 }
+
 .reject-button {
   display: flex;
   justify-content: center;
