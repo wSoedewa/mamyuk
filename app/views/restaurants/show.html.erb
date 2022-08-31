@@ -1,12 +1,34 @@
-<h1><%= @restaurant.name %></h1>
+<div class="container">
+  <div class="row">
+    <h1><%= @restaurant.name %></h1>
+    <ul>
+      <p>Cuisine: <%= @restaurant.cuisine %></p>
+      <p>Price: <%= @restaurant.price %></p>
+      <p>Location: <%= @restaurant.location %></p>
+      <p> Rating: <%= @restaurant.rating %></p>
+    </ul>
 
-<ul>
-  <p>Cuisine: <%= @restaurant.cuisine %></p>
-  <p>Price: <%= @restaurant.price %></p>
-  <p>Location: <%= @restaurant.location %></p>
-  <p> Rating: <%= @restaurant.rating %></p>
-</ul>
+    <div class="button-base menu-button">
+      <%= link_to "menu button", "#" %>
+    </div>
+    <div class="button-base primary-button">
+      <%= link_to "primary button", "#" %>
+    </div>
+    <div class="button-base secondary-button">
+      <%= link_to "secondary button", "#" %>
+    </div>
 
-<%= link_to "primary button", restaurants_path, class: "btn primary-button" %>
+    <div class="col-sm-12 reject-button">
+      <%= link_to "#" do  %>
+        <i class="fa-solid fa-x"></i>
+      <% end %>
+    </div>
 
-<%= link_to "secondary button", restaurants_path, class: "btn secondary-button" %>
+    <div class="col-sm-12 accept-button">
+      <%= link_to "#" do  %>
+        <i class="fa-solid fa-check"></i>
+      <% end %>
+    </div>
+
+  </div>
+</div>
