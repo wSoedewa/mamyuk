@@ -28,4 +28,35 @@
 
 <div class="list-box">
   <%= link_to "list", "#" %>
+
+<%# Category cards %>
+<div class="container">
+  <div class="media-scroller">
+    <div class="media-element">
+      <p class="title">Japanese</p>
+      <img class="img-category" src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="japanese">
+    </div>
+    <div class="media-element">
+      <p class="title">Italian</p>
+      <img class="img-category"  src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="italian">
+    </div>
+    <div class="media-element">
+      <p class="title">Indonesian</p>
+      <img class="img-category"  src="https://images.unsplash.com/photo-1562607635-4608ff48a859?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kb25lc2lhbiUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="indonesian">
+    </div>
+  </div>
+</div>
+
+<%# Range slider %>
+
+<div class="range">
+  <div>
+      <span id="rangeValue">0</span>
+      <Input class="range" type="range" name "" value="0" min="0" max="25" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"></Input>
+  </div>
+  <script type="text/javascript">
+      function rangeSlide(value) {
+          document.getElementById('rangeValue').innerHTML = value;
+      }
+  </script>
 </div>
