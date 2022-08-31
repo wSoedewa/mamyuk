@@ -32,3 +32,19 @@
     background-color: $green;
   }
 }
+.accept-button {
+  border-radius: 100px;
+  border: 2px solid $gray;
+  background-color: $green;
+  width: 44px;
+  height: 44px;
+  box-shadow:
+    0.1em 0.1em 0 0 $green,
+    inset 0.1em 0.1em 0 0 white;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    box-shadow: none;
+    background-color: $green;
+  }
+}
