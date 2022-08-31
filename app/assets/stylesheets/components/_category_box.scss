@@ -5,6 +5,7 @@
   overflow-x: auto;
   // overscroll-behavior-inline: contain;
   margin-bottom: 10px;
+  max-width: 380px;
 }
 
 
@@ -12,11 +13,11 @@
   text-align: center;
   grid-template-rows: min-content;
   padding: 3px;
-
 }
 
 .title {
   margin-bottom: 1px;
+  font-size: 16px;
 }
   .img-category {
     width: 175px;
