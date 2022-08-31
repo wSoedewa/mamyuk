@@ -3,9 +3,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 55px;
   padding: 10px 10px;
   opacity: 3;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-top-style: inset;
+  border-color: #E1EBEB;
 }
 .footer-links {
   display: flex;
