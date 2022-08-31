@@ -53,18 +53,17 @@
     </div>
   </div>
 
-  <%# Range slider %>
+<%# Range slider %>
 
-<div class="container">
-  <div class="range">
-    <div>
-        <span id="rangeValue">0</span>
-        <Input class="range" type="range" name "" value="0" min="0" max="25" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"></Input>
-    </div>
-    <script type="text/javascript">
-        function rangeSlide(value) {
-          document.getElementById('rangeValue').innerHTML = value;
-        }
-    </script>
+<div class="pointer">
+  <p><span id="rangeValue">10</span>km</p>
+</div>
+<div class="slider_wrapper">
+  <div class="slider">
+    <input type="range" min="0" max="20" value="10" oninput="rangeValue.innerText = this.value">
   </div>
 </div>
+  <div class="kilometers">
+    <p>0km</p>
+    <p>20km</p>
+  </div>
