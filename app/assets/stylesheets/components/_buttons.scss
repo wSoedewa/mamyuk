@@ -2,6 +2,8 @@
   border-radius: 10px;
   border: 2px solid $gray;
   background-color: $yellow;
+  margin-top: 10px;
+  margin-bottom: 20px;
   width: 335px;
   height: 44px;
   box-shadow:
@@ -16,6 +18,7 @@
 }
 .secondary-button {
   border-radius: 10px;
+  border: 2px solid $gray;
   background-color: $green;
   width: 335px;
   height: 44px;
@@ -26,5 +29,6 @@
 
   &:hover {
     box-shadow: none;
+    background-color: $green;
   }
 }
