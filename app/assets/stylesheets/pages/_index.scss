@@ -1,7 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.content-container {
+  display: grid;
+  justify-content: center;
+}
+
 .index-header {
   display: flex;
   justify-content: center;
+}
+
+.index-buttons {
+  display: flex;
+  justify-content: space-around;
 }
