@@ -1,0 +1,17 @@
+.title {
+  padding-top: 10px;
+  margin-bottom: 5px;
+  h1 {
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.home_button {
+  width: 100%;
+  position: absolute;
+  bottom: 120px;
+  left: 0;
+  padding: 0  calc(var(--bs-gutter-x) * .5);;
+}
