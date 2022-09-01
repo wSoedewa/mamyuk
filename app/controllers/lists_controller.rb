@@ -7,6 +7,9 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
+  def create
+  end
+
   def show
     @list = List.find(params[:id])
   end
