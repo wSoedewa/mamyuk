@@ -8,9 +8,9 @@
   <div class="class2">
     <div class="container">
       <h1><%= @restaurant.name %></h1>
-        <p>Cuisine: <%= @restaurant.cuisine %></p>
+        <p>Rating: <%= image_tag"star_icon" %> <%= @restaurant.rating %></p>
         <p>Price: <%= @restaurant.price %></p>
-        <p> Rating: <%= @restaurant.rating %></p>
+        <p>Phone: <%= @restaurant.phone_number %></p>
         <p>Favorite Menus:</p>
       <div class="favorite-menu">
         <div>
