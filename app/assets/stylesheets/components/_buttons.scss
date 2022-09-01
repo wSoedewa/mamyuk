@@ -115,3 +115,11 @@
     color: $white;
   }
 }
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}

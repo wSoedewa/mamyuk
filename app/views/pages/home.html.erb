@@ -1,3 +1,4 @@
+
 <div class="container">
     <%= turbo_frame_tag "search_tag" do %>
   <div class="logo_text">
@@ -8,3 +9,12 @@
     </div>
   <% end %>
 </div>
+
+<!--
+<%= form_with url: '/search', method: :get do |f| %>
+  <%= f.text_field :cuisine, placeholder: "cuisine" %>
+  <%= f.number_field :price, placeholder: "price"%>
+  <%= f.number_field :distance, placeholder: "distance" %>
+  <%= f.submit "submit" %>
+<% end %>
+-->

@@ -1,0 +1,32 @@
+.list-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: $yellow;
+  box-shadow:
+    5px 4px 0 0 #faca5b,
+    inset 5px 4px 0 0 white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid $gray;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 335px;
+  height: 87px;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    box-shadow: none;
+    background-color: $yellow;
+  }
+
+  .list-name {
+    font-weight: 900;
+  }
+
+  a {
+    color: $gray;
+    text-decoration: none;
+  }
+}
