@@ -2,7 +2,7 @@
   <div class="container-fluid">
   <% if user_signed_in? %>
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "mamyuk.png" %>
+      <%= image_tag "mamyuk.png"%>
     <% end %>
   <% else %>
    <%= link_to "#", class: "navbar-location" do %>
@@ -11,8 +11,8 @@
   <% end %>
 
     <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    <%= image_tag "vector.png" %>
+  <button class="btn dropdown-color:white dropdown-border-color:white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    <%= image_tag "vector.png", :class => "drop_down_icon" %>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="#">Profile</a></li>

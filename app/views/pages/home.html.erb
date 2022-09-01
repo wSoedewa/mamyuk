@@ -1,1 +1,10 @@
-<%= render "shared/restaurant_card" %>
+<div class="container">
+    <%= turbo_frame_tag "search_tag" do %>
+  <div class="logo_text">
+    <%= image_tag "text_mamyuk_logo.png", :class => "w-100"%>
+  </div>
+    <div class="button-base primary-button mx-auto mt-5">
+      <%= link_to "Let's start", food_choice_path %>
+    </div>
+  <% end %>
+</div>

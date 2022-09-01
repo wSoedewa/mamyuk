@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def components
   end
+
+  def search_1
+  end
 end
