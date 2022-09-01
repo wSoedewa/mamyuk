@@ -41,7 +41,7 @@ p {
 
 .blockquote {
   text-align: center;
-  width: 85%;
+  width: 100%;
   margin-top: 15px;
   margin-bottom: 1rem;
   font-size: 1.25rem;
@@ -74,7 +74,7 @@ p {
 }
 
 .map-image {
-  width: 85%;
+  width: 100%;
   border-radius: 10px;
   height: 170px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -112,4 +112,8 @@ position: absolute;
 bottom: 0;
 right: 0;
 z-index: 2;
+}
+
+.button-base {
+  width: 100%;
 }
