@@ -1,34 +1,55 @@
-<div class="container">
-  <div class="row">
-    <h1><%= @restaurant.name %></h1>
-    <ul>
-      <p>Cuisine: <%= @restaurant.cuisine %></p>
-      <p>Price: <%= @restaurant.price %></p>
-      <p>Location: <%= @restaurant.location %></p>
-      <p> Rating: <%= @restaurant.rating %></p>
-    </ul>
-
-    <div class="button-base menu-button">
-      <%= link_to "menu button", "#" %>
+<div class="show-page">
+  <div class="class1">
+    <%= image_tag "card_image", class:"card-image" %>
+    <%= link_to restaurants_path, class:"btn btn-arrow" do %>
+      <%= image_tag"down_button" %>
+    <% end %>
+  </div>
+  <div class="class2">
+    <div class="container">
+      <h1><%= @restaurant.name %></h1>
+        <p>Rating: <%= image_tag"star_icon" %> <%= @restaurant.rating %></p>
+        <p>Price: <%= @restaurant.price %></p>
+        <p>Phone: <%= @restaurant.phone_number %></p>
+        <p>Favorite Menus:</p>
+      <div class="favorite-menu">
+        <div>
+          <blockquote class="menu-block">
+            <p>Pizza Marinara</p>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote class="menu-block">
+            <p>Pizza Tutti Fruity</p>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote class="menu-block">
+            <p>Bolognese</p>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote class="menu-block">
+            <p>Spaghetti Carbonara</p>
+          </blockquote>
+        </div>
+      </div>
+      <div class="button-base menu-button">
+        <%= link_to "Check Full Menu", "#" %>
+      </div>
+      <div class="location">
+          <p>Location: <%= @restaurant.location %></p>
+      </div>
+      <div>
+        <%= image_tag"map.png", class:"map-image" %>
+      </div>
+      <div class="review" >
+        <p>Reviews:</p>
+          <blockquote class="blockquote">
+            <p>“Amazing Pizza! Will come back again”</p>
+            <p>-Matteo Vigolo</p>
+          </blockquote>
+      </div>
     </div>
-    <div class="button-base primary-button">
-      <%= link_to "primary button", "#" %>
-    </div>
-    <div class="button-base secondary-button">
-      <%= link_to "secondary button", "#" %>
-    </div>
-
-    <div class="col-sm-12 reject-button">
-      <%= link_to "#" do  %>
-        <i class="fa-solid fa-x"></i>
-      <% end %>
-    </div>
-
-    <div class="col-sm-12 accept-button">
-      <%= link_to "#" do  %>
-        <i class="fa-solid fa-check"></i>
-      <% end %>
-    </div>
-
   </div>
 </div>

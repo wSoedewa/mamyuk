@@ -3,11 +3,14 @@
   gap: 5%;
   grid-auto-flow: column;
   overflow-x: auto;
-  // overscroll-behavior-inline: contain;
+  overscroll-behavior-inline: contain;
   margin-bottom: 10px;
-  max-width: 380px;
+  width:360px;
 }
 
+.media-scroller::-webkit-scrollbar {
+  display: none;
+}
 
 .media-element{
   text-align: center;
