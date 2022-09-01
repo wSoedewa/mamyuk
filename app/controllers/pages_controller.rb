@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
   end
@@ -22,7 +22,7 @@ class PagesController < ApplicationController
     #   end
     #   @restaurants << resto if @restaurants.length < 3 && resto
     # end
-    @restaurants = Restaurant.limit(3 )
+    @restaurants = Restaurant.limit(3)
   end
 
   def components

@@ -2,7 +2,17 @@
 @import "home";
 @import "show";
 
+.content-container {
+  display: grid;
+  justify-content: center;
+}
+
 .index-header {
   display: flex;
   justify-content: center;
+}
+
+.index-buttons {
+  display: flex;
+  justify-content: space-around;
 }
