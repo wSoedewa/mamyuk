@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  font-weight: bold;
   border: 2px solid $gray;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -112,4 +113,12 @@
   a {
     color: $white;
   }
+}
+
+.col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }

@@ -1,66 +1,57 @@
-<%# Rectangle Buttons %>
-<div class="button-base menu-button">
-  <%= link_to "menu button", "#" %>
-</div>
-
-<div class="button-base primary-button">
-  <%= link_to "primary button", "#" %>
-</div>
-
-<div class="button-base secondary-button">
-  <%= link_to "secondary button", "#" %>
-</div>
-
-<%# Round Buttons %>
-<div class="col-sm-12 reject-button">
-  <%= link_to "#" do %>
-    <i class="fa-solid fa-x"></i>
-  <% end %>
-</div>
-
-<div class="col-sm-12 accept-button">
-  <%= link_to "#" do  %>
-    <i class="fa-solid fa-check"></i>
-  <% end %>
-</div>
-
-<%# Category cards %>
 <div class="container">
-  <div class="media-scroller">
-    <div class="media-element">
-      <p class="title">Japanese</p>
-      <img class="img-category" src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="japanese">
-    </div>
-    <div class="media-element">
-      <p class="title">Italian</p>
-      <img class="img-category"  src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="italian">
-    </div>
-    <div class="media-element">
-      <p class="title">Indonesian</p>
-      <img class="img-category"  src="https://images.unsplash.com/photo-1562607635-4608ff48a859?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kb25lc2lhbiUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="indonesian">
-    </div>
+  <%# Rectangle Buttons %>
+  <div class="button-base menu-button">
+    <%= link_to "menu button", "#" %>
+  </div>
+
+  <div class="button-base primary-button">
+    <%= link_to "primary button", "#" %>
+  </div>
+
+  <div class="button-base secondary-button">
+    <%= link_to "secondary button", "#" %>
+  </div>
+
+  <%# Round Buttons %>
+  <div class="col-sm-12 reject-button">
+    <%= link_to "#" do %>
+      <i class="fa-solid fa-x"></i>
+    <% end %>
+  </div>
+
+  <div class="col-sm-12 accept-button">
+    <%= link_to "#" do  %>
+      <i class="fa-solid fa-check"></i>
+    <% end %>
+  </div>
+
+  <%# Text Box %>
+
+  <div class="list-box">
+    <%= link_to restaurants_path do  %>
+      <h3 class="list-name">List Name</h3>
+      <p>number of places</p>
+      <% end %>
   </div>
 </div>
 
-
-<!--
-<div class="range_container">
-  <div class="range">
-    <input type="range" min="0" max="20" value ="10" id="slider">
-    <div id="selector">
-      <div class="selectBtn"></div>
+  <%# Category cards %>
+  <div class="container">
+    <div class="media-scroller">
+      <div class="media-element">
+        <p class="title">Japanese</p>
+        <img class="img-category" src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="japanese">
+      </div>
+      <div class="media-element">
+        <p class="title">Italian</p>
+        <img class="img-category"  src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="italian">
+      </div>
+      <div class="media-element">
+        <p class="title">Indonesian</p>
+        <img class="img-category"  src="https://images.unsplash.com/photo-1562607635-4608ff48a859?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kb25lc2lhbiUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="indonesian">
+      </div>
     </div>
   </div>
-  <script>
-    var slider = document.getElementById("slider");
-    var selector = document.getElementById("selector");
-
-    slider.oninput = function() {
-      selector.style.left = this.value + "%";
-    }
-  </script>
-</div>
--->
 
 <%# Range slider %>
 
