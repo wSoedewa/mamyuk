@@ -7,5 +7,6 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+
 import SeeResultsController from "./see_results_controller"
 application.register("see-results", SeeResultsController)
