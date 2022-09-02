@@ -1,6 +1,6 @@
 <div class="show-page">
   <div class="class1">
-    <%= image_tag "card_image.png", class:"card-image" %>
+    <%= image_tag "pizza.jpg", class:"card-image" %>
     <%= link_to restaurants_path, class:"btn btn-arrow" do %>
       <%= image_tag"down_button.png" %>
     <% end %>
@@ -8,8 +8,8 @@
   <div class="class2">
     <div class="container">
       <h1><%= @restaurant.name %></h1>
-        <p>Rating: <%= image_tag"star_icon.png" %> <%= @restaurant.rating %></p>
-        <p>Price: <%= @restaurant.price %></p>
+        <p>Rating: <%= image_tag "star_icon.png" %> <%= 4.5 %></p>
+        <p>Price: <%= "$$$$" %></p>
         <p>Phone: <%= @restaurant.phone_number %></p>
         <p>Favorite Menus:</p>
       <div class="favorite-menu">
