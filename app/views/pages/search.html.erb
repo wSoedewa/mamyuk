@@ -9,28 +9,37 @@
 @price_level
 @opening_hours %>
 
-
-
 <div>
   <% @restaurants.each do |r| %>
-    <div class="card-trip">
-        <%= image_tag"card_image.png" %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= r.name %></h2>
-          <p><%= image_tag"star_icon.png" %> <%= r.rating %> (500 reviews)</p>
-        </div>
-        <div class="d-flex">
-            <div class="like">
-            <%= image_tag"heart_icon.png" %>
-            </div>
-            <div class="info">
-            <%= image_tag"Information_icon.png" %>
-            </div>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="card-trip active">
+          <%= image_tag"card_image.png" %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= r.name %></h2>
+            <p><%= image_tag"star_icon.png" %> <%= r.rating %> (500 reviews)</p>
           </div>
-      </div>
+          <div class="d-flex">
+              <div class="like">
+              <%= image_tag"heart_icon.png" %>
+              </div>
+              <div class="info">
+              <%= image_tag"Information_icon.png" %>
+              </div>
+            </div>
+        </div>
     </div>
   <% end %>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
   <div class="index-buttons">
     <div class="col-sm-12 reject-button">
@@ -45,4 +54,3 @@
       <% end %>
     </div>
   </div>
-</div>
