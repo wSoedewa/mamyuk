@@ -27,7 +27,13 @@
     height: 175px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow:
+   box-shadow:
     0.3em 0.3em 0 0 $gray,
     inset 0.3em 0.3em 0 0 white;
+
+    &:hover {
+      box-shadow:
+    0.3em 0.3em 0 0 $yellow,
+    inset 0.3em 0.3em 0 0 white;
+    }
   }
