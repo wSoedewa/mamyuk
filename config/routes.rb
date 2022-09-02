@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/food-choice-4', to: "pages#loading_results"
 
   get '/search', to: "pages#search"
+  get '/confirmation', to: "restaurants#confirmation"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :restaurants, only: %i[index show] do
