@@ -54,3 +54,14 @@
   justify-content: center;
   display: grid;
 }
+
+.carousel-control-next {
+  right: 0px;
+  top: 35%;
+  height: 100px;
+}
+.carousel-control-prev {
+  left: 0px;
+  top: 35%;
+  height: 100px;
+}
