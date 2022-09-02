@@ -5,4 +5,10 @@
   <div class="loading position-absolute top-50 start-50 translate-middle">
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </div>
+
+    <div class="home_button">
+      <div class="button-base primary-button mx-auto">
+      <%= link_to "See results!", restaurants_path, data: { turbo: "false" } %>
+      </div>
+    </div>
 <% end %>

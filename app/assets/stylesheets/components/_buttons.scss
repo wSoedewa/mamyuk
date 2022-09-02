@@ -123,3 +123,24 @@
   justify-content: center;
   margin-top: 30px;
 }
+
+.budget_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid $gray;
+  background-color: white;
+  box-shadow:
+  0.1em 0.1em 0 0 white,
+  inset 0.3em 0.3em 0 0 white;
+
+  &:hover {
+    box-shadow: none;
+    background-color: $yellow;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
