@@ -1,7 +1,26 @@
+.list-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  h1 {
+    margin: 0px;
+  }
+
+  .fa-solid {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: bold;
+    font-size: x-large;
+  }
+}
+
+
 .list-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
   background-color: $yellow;
   box-shadow:
@@ -10,7 +29,7 @@
   padding: 10px;
   border-radius: 10px;
   border: 2px solid $gray;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
   width: 335px;
   height: 87px;
@@ -25,8 +44,18 @@
     font-weight: 900;
   }
 
+  h2 {
+    font-weight: bold;
+  }
+
   a {
     color: $gray;
     text-decoration: none;
   }
+
+  ul {
+    list-style: none;
+    padding-left: 10px;
+  }
+
 }
