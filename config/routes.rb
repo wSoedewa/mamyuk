@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :lists
 
-  resources :favorites, only: %i[index create update destroy]
+  resources :favorites, only: %i[index update destroy]
   # Defines the root path route ("/")
   # root "articles#index"
 end

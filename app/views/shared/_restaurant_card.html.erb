@@ -10,7 +10,7 @@
       <div class="d-flex">
       <!-- Button trigger modal -->
       <button type="button" class="favorite-icon" data-bs-toggle="modal" data-bs-target="#exampleModal<%= restaurant.id %>">
-        <%= image_tag"heart_icon.png" %>
+        <i class="fa-regular fa-heart"></i>
       </button>
 
         <div class="info">
@@ -30,14 +30,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <%= simple_form_for @favorite do |f| %>
-            <%= f.input :list, collection: current_user.lists %>
+          <%= simple_form_for [restaurant, @favorite] do |f| %>
+            <%= f.input :list_id, collection: current_user.lists %>
+            <%= f.button :submit, 'Save' %>
           <% end %>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>

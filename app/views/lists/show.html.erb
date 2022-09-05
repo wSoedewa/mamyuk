@@ -1,8 +1,8 @@
 <div class="container">
   <h1><%= @list.name %></h1>
   <ul>
-    <% @list.favorites.each do |fave| %>
-      <li><%= render "shared/restaurant_card", restaurant: fave.restaurant %></li>
+    <% @favorites.each do |fave| %>
+      <%= render 'shared/restaurant_card', restaurant: fave.restaurant %>
     <% end %>
   </ul>
 </div>

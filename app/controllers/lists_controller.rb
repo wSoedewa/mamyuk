@@ -12,6 +12,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @favorites = @list.favorites
+    @favorite = Favorite.new
   end
 
   def edit
