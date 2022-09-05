@@ -1,0 +1,8 @@
+<% @bookings.each do |booking| %>
+  <div class="card">
+    <div class="card-body">
+      <%= booking.restaurant.name %>
+      <%= booking.restaurant.cuisine %>
+    </div>
+  </div>
+<% end %>

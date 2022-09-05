@@ -1,4 +1,21 @@
-  <h1>Bon Appetit</h1>
-    <div class="button-base primary-button mx-auto mt-5">
-      <%= link_to "Call to book", confirmation_path  %>
+<h1>Bon Appetit</h1>
+
+<button type="button" class="button-base primary-button mx-auto mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Call to book
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        0812 1234 5678
+      </div>
+      <div class="modal-footer">
+        <%# <%= link_to "Call now", bookings_path(id: @restaurant.id), data: {turbo_method: :post} %>
+        <%= link_to "Call now", "tel:0812 1234 5678" %>
+      </div>
     </div>
+  </div>
+</div>
