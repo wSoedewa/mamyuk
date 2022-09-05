@@ -3,6 +3,15 @@ class FavoritesController < ApplicationController
     @favorites = Favorite.all
   end
 
+  def create
+    @favorite = Favorite.new(params[:restaurant_id])
+    if @favorite.save
+      flash[:notice] = "Saved to Favorites."
+    else
+      flash[:alert] = "Error."
+    end
+  end
+
   def update
   end
 
