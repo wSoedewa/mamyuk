@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def search
     @client = GooglePlaces::Client.new(ENV.fetch('GOOGLE_MAPS_KEY'))
     @restaurants = []
-    restaurants = @client.spots(-8.7233, 115.1723, name: params[:cuisine], types: ['restaurant', 'food'], detail: true)
+    restaurants = @client.spots(-8.4546925, 114.7913926, name: params[:cuisine], types: ['restaurant', 'food'], detail: true)
     restaurants.each do |r|
       # raise
       resto = Restaurant.new(
@@ -21,7 +21,7 @@ class PagesController < ApplicationController
       unless resto.save
         resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
       end
-      @restaurants << resto if @restaurants.length < 3 && resto
+      # @restaurants << resto if @restaurants.length < 3 && resto
     end
     # @restaurants = Restaurant.limit(3)
   end

@@ -8,8 +8,12 @@
   <div class="class2">
     <div class="container">
       <h1><%= @restaurant.name %></h1>
-        <p>Rating: <%= image_tag "star_icon.png" %> <%= 4.5 %></p>
-        <p>Price: <%= "$$$$" %></p>
+        <p>Rating: <%= image_tag "star_icon.png" %> <%= @restaurant.rating %></p>
+        <% if @restaurant.price  %>
+          <p>Price: <%= "$" * @restaurant.price %></p>
+        <% else %>
+          <p> Price: N/A </p>
+        <% end %>
         <p>Phone: <%= @restaurant.phone_number %></p>
         <p>Favorite Menus:</p>
       <div class="favorite-menu">
