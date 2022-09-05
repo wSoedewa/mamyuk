@@ -8,6 +8,16 @@
   }
 }
 
+.category_title {
+  text-decoration: none;
+}
+
+.name_category {
+  font-size: 26;
+  color: $gray;
+  font-weight: bold;
+}
+
 .home_button {
   width: 100%;
   position: absolute;

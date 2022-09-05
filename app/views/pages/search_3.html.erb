@@ -1,5 +1,6 @@
   <%= turbo_frame_tag "search_3_tag" do %>
     <%= turbo_frame_tag "loading_results_tag" do %>
+    <%= form_with url: food_choice_4_path, method: :get do | f |%>
     <div class="title pb-5 mb-5">
       <h1>How far are you willing to go?</h1>
     </div>
@@ -8,17 +9,14 @@
     </div>
     <div class="slider_wrapper pt-4">
       <div class="slider">
-        <input type="range" min="0" max="20" value="10" oninput="rangeValue.innerText = this.value">
+        <input name="distance" type="range" min="1" max="20" value="10" oninput="rangeValue.innerText = this.value">
       </div>
     </div>
       <div class="kilometers">
-        <p>0km</p>
+        <p>1km</p>
         <p>20km</p>
       </div>
-    <div class="home_button">
-      <div class="button-base primary-button mx-auto">
-      <%= link_to "Next", food_choice_4_path %>
-    </div>
-    </div>
+     <%= f.submit "Next", class:"button-base primary-button mx-auto" %>
+    <% end %>
   <% end %>
 <% end %>

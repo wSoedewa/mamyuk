@@ -32,11 +32,14 @@ class PagesController < ApplicationController
   end
 
   def search_2
+    session[:category_chosen] = params[:category_chosen]
   end
-
+# Need to include all budget below the one selected
   def search_3
+    session[:budget_chosen] = params[:budget_chosen]
   end
-
+# Need to include distance between 0km and distance selected
   def loading_results
+    session[:distance] = params[:distance]
   end
 end

@@ -79,3 +79,4 @@ group :test do
 end
 
 gem 'google_places'
+gem "geocoder"

@@ -11,6 +11,8 @@
   transition: 0.1s ease-in-out;
   font-weight: bold;
   font-size: 22px;
+  text-decoration: none;
+  color: $gray;
 
   &:hover {
     box-shadow: none;

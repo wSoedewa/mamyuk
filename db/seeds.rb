@@ -18,10 +18,10 @@ puts "Creating restaurants..."
 10.times do |restaurant|
   r = Restaurant.create!(
     name: Faker::Restaurant.name,
-    location: Faker::Address.full_address,
+    location: "Canggu, Bali",
     price: number.sample,
     rating: number.sample,
-    cuisine: Faker::Nation.nationality,
+    cuisine: "French",
     phone_number: Faker::PhoneNumber.cell_phone
   )
   puts "Created #{r.name}"
@@ -37,5 +37,6 @@ puts "Creating users..."
   )
   puts "Created #{u.first_name} #{u.last_name}"
 end
+
 
 puts "Finished!"
