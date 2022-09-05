@@ -5,18 +5,16 @@
       <div class="justify-content-center">
         <h1 class="index-header">Et Voila!</h1>
       </div>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000" data-controller="reject-buttons">
         <div class="carousel-inner">
           <% @restaurants.limit(3).each_with_index do |restaurant, index| %>
-            <div id="card-<%= restaurant.id %>" class="carousel-item <%= 'active' if index.zero? %>">
+            <div id="card-<%= restaurant.id %>" class="carousel-item <%= 'active' if index.zero? %>" data-reject-buttons-target="reject">
               <%= render 'shared/restaurant_card', restaurant: restaurant %>
               <div class="buttons">
                 <div class="row justify-content-center">
                   <div class="col-6">
-                    <div class="reject-button">
-                      <%= link_to "#" do %>
-                        <i class="fa-solid fa-x"></i>
-                      <% end %>
+                    <div class="reject-button" data-action="click->reject-buttons#delete">
+                      <i class="fa-solid fa-x"></i>
                     </div>
                   </div>
 
@@ -36,7 +34,7 @@
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" data-reject-buttons-target="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
