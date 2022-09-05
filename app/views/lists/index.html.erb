@@ -7,19 +7,19 @@
         <i class="fa-solid fa-plus"></i>
       <% end %>
     </div>
-    <div class="list">
-      <% @lists.each do |list| %>
-        <div class="list-box">
-          <ul>
-            <div class="list-desc">
-              <%= link_to list_path do %>
-                <li>
-                  <h2><%= list.name %></h2>
-                </li>
-              <% end %>
+        <div class="list">
+          <% @lists.each do |list| %>
+                  <%= link_to list_path(list) do %>
+            <div class="list-box">
+              <ul>
+                <div class="list-desc">
+                    <li>
+                      <h2><%= list.name %></h2>
+                    </li>
+                </div>
+              </ul>
             </div>
-          </ul>
-        </div>
+          <% end %>
       <% end %>
     </div>
   </div>
