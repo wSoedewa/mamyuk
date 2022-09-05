@@ -21,7 +21,7 @@ class PagesController < ApplicationController
       unless resto.save
         resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
       end
-      # @restaurants << resto if @restaurants.length < 3 && resto
+      @restaurants << resto if @restaurants.length < 3 && resto
     end
     # @restaurants = Restaurant.limit(3)
   end
