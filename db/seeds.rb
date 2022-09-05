@@ -25,7 +25,9 @@ restaurants.each do |r|
     rating: r.rating,
     location: r.formatted_address,
     cuisine: "French",
-    phone_number: r.formatted_phone_number
+    phone_number: r.formatted_phone_number,
+    latitude: r.lat,
+    longitude: r.lng
   )
   unless resto.save
     resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
@@ -41,7 +43,9 @@ restaurants.each do |r|
     rating: r.rating,
     location: r.formatted_address,
     cuisine: "Indonesian",
-    phone_number: r.formatted_phone_number
+    phone_number: r.formatted_phone_number,
+    latitude: r.lat,
+    longitude: r.lng
   )
   unless resto.save
     resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
