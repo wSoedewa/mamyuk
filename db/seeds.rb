@@ -13,6 +13,7 @@ Restaurant.destroy_all
 User.destroy_all
 
 puts "Creating restaurants..."
+
 client = GooglePlaces::Client.new(ENV.fetch('GOOGLE_MAPS_KEY'))
 p client
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "French", detail: true)
@@ -24,7 +25,9 @@ restaurants.each do |r|
     rating: r.rating,
     location: r.formatted_address,
     cuisine: "French",
-    phone_number: r.formatted_phone_number
+    phone_number: r.formatted_phone_number,
+    latitude: r.lat,
+    longitude: r.lng
   )
   unless resto.save
     resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
@@ -40,7 +43,9 @@ restaurants.each do |r|
     rating: r.rating,
     location: r.formatted_address,
     cuisine: "Indonesian",
-    phone_number: r.formatted_phone_number
+    phone_number: r.formatted_phone_number,
+    latitude: r.lat,
+    longitude: r.lng
   )
   unless resto.save
     resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
@@ -57,5 +62,6 @@ puts "Creating users..."
   )
   puts "Created #{u.first_name} #{u.last_name}"
 end
+
 
 puts "Finished!"

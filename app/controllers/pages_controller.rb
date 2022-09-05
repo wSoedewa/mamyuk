@@ -21,7 +21,7 @@ class PagesController < ApplicationController
       unless resto.save
         resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
       end
-      # @restaurants << resto if @restaurants.length < 3 && resto
+      @restaurants << resto if @restaurants.length < 3 && resto
     end
     # @restaurants = Restaurant.limit(3)
   end
@@ -33,11 +33,14 @@ class PagesController < ApplicationController
   end
 
   def search_2
+    session[:category_chosen] = params[:category_chosen]
   end
-
+# Need to include all budget below the one selected
   def search_3
+    session[:budget_chosen] = params[:budget_chosen]
   end
-
+# Need to include distance between 0km and distance selected
   def loading_results
+    session[:distance] = params[:distance]
   end
 end
