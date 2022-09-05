@@ -7,6 +7,11 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import RejectButtonsController from "./reject_buttons_controller"
+application.register("reject-buttons", RejectButtonsController)
 
 import SeeResultsController from "./see_results_controller"
 application.register("see-results", SeeResultsController)
+
+import SwipableCardsController from "./swipable_cards_controller"
+application.register("swipable-cards", SwipableCardsController)

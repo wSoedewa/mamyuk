@@ -8,5 +8,6 @@ class RestaurantsController < ApplicationController
   end
 
   def confirmation
+    @restaurant = Restaurant.find(params[:id])
   end
 end
