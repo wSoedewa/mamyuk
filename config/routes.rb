@@ -10,10 +10,13 @@ Rails.application.routes.draw do
 
   get '/search', to: "pages#search"
   get '/confirmation', to: "restaurants#confirmation"
+  resources :bookings, only: %i[index show]
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :restaurants, only: %i[index show] do
     resources :favorites, only: %i[create]
+    resources :bookings, only: %i[create]
   end
 
   resources :lists

@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
 
 puts "Cleaning database..."
 Favorite.destroy_all
@@ -13,27 +12,49 @@ List.destroy_all
 Restaurant.destroy_all
 User.destroy_all
 
-number = [1, 2, 3, 4]
 puts "Creating restaurants..."
-10.times do |restaurant|
-  r = Restaurant.create!(
-    name: Faker::Restaurant.name,
-    location: "Canggu, Bali",
-    price: number.sample,
-    rating: number.sample,
+
+client = GooglePlaces::Client.new(ENV.fetch('GOOGLE_MAPS_KEY'))
+p client
+restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "French", detail: true)
+pp restaurants
+restaurants.each do |r|
+  resto = Restaurant.new(
+    name: r.name,
+    price: r.price_level,
+    rating: r.rating,
+    location: r.formatted_address,
     cuisine: "French",
-    phone_number: Faker::PhoneNumber.cell_phone
+    phone_number: r.formatted_phone_number
   )
-  puts "Created #{r.name}"
+  unless resto.save
+    resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
+  end
+end
+
+restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Indonesian", detail: true)
+pp restaurants
+restaurants.each do |r|
+  resto = Restaurant.new(
+    name: r.name,
+    price: r.price_level,
+    rating: r.rating,
+    location: r.formatted_address,
+    cuisine: "Indonesian",
+    phone_number: r.formatted_phone_number
+  )
+  unless resto.save
+    resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
+  end
 end
 
 puts "Creating users..."
-10.times do |user|
+10.times do |i|
   u = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password(min_length: 8)
+    email: "user#{i + 1}@g.com",
+    password: 123123
   )
   puts "Created #{u.first_name} #{u.last_name}"
 end

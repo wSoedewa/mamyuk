@@ -1,7 +1,26 @@
-<h1>Lists</h1>
+<div class="container">
 
-  <% @lists.each do |list| %>
-<ul>
-  <li><%= list.name %></li>
-</ul>
- <% end %>
+  <div class="list-container">
+    <div class="list-header">
+      <h1>Lists</h1>
+      <%= link_to new_list_path do %>
+        <i class="fa-solid fa-plus"></i>
+      <% end %>
+    </div>
+        <div class="list">
+          <% @lists.each do |list| %>
+                  <%= link_to list_path(list) do %>
+            <div class="list-box">
+              <ul>
+                <div class="list-desc">
+                    <li>
+                      <h2><%= list.name %></h2>
+                    </li>
+                </div>
+              </ul>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

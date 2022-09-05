@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all
+    @lists = List.where(user_id: current_user.id)
   end
 
   def new
@@ -12,6 +12,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @favorites = @list.favorites
+    @favorite = Favorite.new
   end
 
   def edit
