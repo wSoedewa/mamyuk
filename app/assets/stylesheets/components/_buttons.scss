@@ -103,6 +103,7 @@
   border: 2px solid $gray;
   background-color: $red;
   font-size: 35px;
+  color: white;
   margin: 10px;
   width: 70px;
   height: 70px;
@@ -162,4 +163,11 @@
 .add-list-button {
   display: flex;
   justify-content: flex-end;
+}
+
+.favorite-icon {
+  background: none;
+  border: none;
+  font-size: x-large;
+  color: $gray;
 }
