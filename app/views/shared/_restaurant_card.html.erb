@@ -1,6 +1,10 @@
 <div class="container">
   <div class="card-trip">
+      <% if restaurant.photos.attached? %>
+      <%= cl_image_tag restaurant.photos[0].key %>
+      <% else %>
       <%= image_tag "pizza.jpg" %>
+      <% end %>
     <div class="card-trip-infos">
       <div>
         <h2><%= restaurant.name %></h2>
@@ -37,4 +41,5 @@
       </div>
     </div>
   </div>
+
 </div>
