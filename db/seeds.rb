@@ -18,6 +18,7 @@ client = GooglePlaces::Client.new(ENV.fetch('GOOGLE_MAPS_KEY'))
 p client
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "French", detail: true)
 pp restaurants
+raise
 restaurants.each do |r|
   resto = Restaurant.new(
     name: r.name,
