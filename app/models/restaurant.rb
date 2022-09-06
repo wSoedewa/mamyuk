@@ -1,5 +1,6 @@
 class Restaurant < ApplicationRecord
   has_many :favorites
+  has_many_attached :photos
   has_many :reviews
   validates :name, presence: true
   validates :location, presence: true
@@ -25,5 +26,4 @@ class Restaurant < ApplicationRecord
    ]
 
   BUDGETS = ["$", "$$", "$$$", "$$$$"]
-
 end

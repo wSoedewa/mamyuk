@@ -80,3 +80,4 @@ end
 
 gem 'google_places'
 gem "geocoder"
+gem "cloudinary"
