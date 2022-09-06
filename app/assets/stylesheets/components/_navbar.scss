@@ -3,16 +3,41 @@
   background: white;
 }
 
+.logo_location{
+  padding-left: 5px;
+}
+.location_name {
+  color: $gray;
+  display: inline;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
 }
 
 .drop_down_icon {
-  width: 40px;
-  height: 30px;
+  width: 35px;
+  height: 25px;
+}
+
+.button-menu {
+  border-color: white;
+
+  &:hover {
+    border-color: white;
+  }
+}
+
+.drop-menu {
+  border-color: white;
+  width: 50px;
+
+  &:hover {
+    border-color: white;
+  }
 }
