@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_05_075858) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_06_060015) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_075858) do
     t.float "longitude"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "text"
+    t.string "author_name"
+    t.float "rating"
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -74,4 +84,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_075858) do
   add_foreign_key "favorites", "lists"
   add_foreign_key "favorites", "restaurants"
   add_foreign_key "lists", "users"
+  add_foreign_key "reviews", "restaurants"
 end

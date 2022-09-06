@@ -9,6 +9,7 @@
 puts "Cleaning database..."
 Favorite.destroy_all
 List.destroy_all
+Review.destroy_all
 Restaurant.destroy_all
 User.destroy_all
 
@@ -33,6 +34,16 @@ restaurants.each do |r|
   unless resto.save
     resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
   end
+  puts "Creating review for #{resto.name}"
+  r.reviews.first(5).each do |review|
+    review = Review.new(
+    text: review.text,
+    author_name: review.author_name,
+    rating: review.rating,
+    restaurant_id: resto.id
+    )
+    review.save
+  end
 end
 
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Indonesian", detail: true)
@@ -51,6 +62,16 @@ restaurants.each do |r|
   unless resto.save
     resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
   end
+  puts "Creating review for #{resto.name}"
+  r.reviews.first(5).each do |review|
+    review = Review.new(
+    text: review.text,
+    author_name: review.author_name,
+    rating: review.rating,
+    restaurant_id: resto.id
+    )
+    review.save
+  end
 end
 
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Italian", detail: true)
@@ -65,10 +86,22 @@ restaurants.each do |r|
     phone_number: r.formatted_phone_number,
     latitude: r.lat,
     longitude: r.lng
-  )
-  unless resto.save
-    resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
-  end
+    )
+
+    unless resto.save
+      resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
+    end
+
+    puts "Creating review for #{resto.name}"
+    r.reviews.first(5).each do |review|
+      review = Review.new(
+      text: review.text,
+      author_name: review.author_name,
+      rating: review.rating,
+      restaurant_id: resto.id
+      )
+      review.save
+    end
 end
 
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['bar'], name: "Bar", detail: true)
@@ -87,7 +120,18 @@ restaurants.each do |r|
   unless resto.save
     resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
   end
+  puts "Creating review for #{resto.name}"
+  r.reviews.first(5).each do |review|
+    review = Review.new(
+    text: review.text,
+    author_name: review.author_name,
+    rating: review.rating,
+    restaurant_id: resto.id
+    )
+    review.save
+  end
 end
+
 
 puts "Creating users..."
 10.times do |i|
