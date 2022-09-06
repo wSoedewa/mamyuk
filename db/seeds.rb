@@ -5,8 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
 puts "Cleaning database..."
+Booking.destroy_all
 Favorite.destroy_all
 Booking.destroy_all
 List.destroy_all
@@ -20,7 +22,6 @@ client = GooglePlaces::Client.new(ENV.fetch('GOOGLE_MAPS_KEY'))
 p client
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "French", detail: true)
 pp restaurants
-
 restaurants.each do |r|
   resto = Restaurant.new(
     name: r.name,
@@ -30,7 +31,7 @@ restaurants.each do |r|
     cuisine: "French",
     phone_number: r.formatted_phone_number,
     latitude: r.lat,
-    longitude: r.lng
+    longitude: r.lng,
   )
   unless resto.save
     resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
@@ -44,6 +45,13 @@ restaurants.each do |r|
     restaurant_id: resto.id
     )
     review.save
+  end
+
+  r.photos.first(2).each do |photo|
+    url = photo.fetch_url(500)
+    file = URI.open(url)
+    resto.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+    resto.save
   end
 end
 
@@ -72,6 +80,13 @@ restaurants.each do |r|
     restaurant_id: resto.id
     )
     review.save
+  end
+
+  r.photos.first(2).each do |photo|
+    url = photo.fetch_url(500)
+    file = URI.open(url)
+    resto.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+    resto.save
   end
 end
 
@@ -103,6 +118,13 @@ restaurants.each do |r|
       )
       review.save
     end
+
+  r.photos.first(2).each do |photo|
+    url = photo.fetch_url(500)
+    file = URI.open(url)
+    resto.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+    resto.save
+  end
 end
 
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['bar'], name: "Bar", detail: true)
@@ -130,6 +152,13 @@ restaurants.each do |r|
     restaurant_id: resto.id
     )
     review.save
+  end
+
+  r.photos.first(2).each do |photo|
+    url = photo.fetch_url(500)
+    file = URI.open(url)
+    resto.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+    resto.save
   end
 end
 

@@ -1,10 +1,10 @@
-<div class="booking_container">
-  <h1 class="bookingh1">Booking</h1><% @bookings.each do |booking| %>
-    <div class="card-booking">
-      <div class="card-body-booking">
-        <%= booking.restaurant.name %>
-        <%= booking.restaurant.cuisine %>
-      </div>
+<h1 class="bookingh1">Booking</h1><% @bookings.each do |booking| %>
+  <div class="card-booking">
+    <div class="card-body-booking">
+      <p><%= booking.restaurant.name %></p>
+      <p><%= booking.restaurant.cuisine %></p>
+      <p><%= booking.restaurant.phone_number %></p>
+      <%= link_to "Call now", "tel:#{booking.restaurant.phone_number}"  %>
     </div>
   <% end %>
 </div>

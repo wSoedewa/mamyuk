@@ -6,6 +6,7 @@
 .logo_location{
   padding-left: 5px;
 }
+
 .location_name {
   color: $gray;
   display: inline;
@@ -20,9 +21,8 @@
   height: 65px;
 }
 
-.drop_down_icon {
-  width: 35px;
-  height: 25px;
+.fa-bars {
+  font-size: x-large;
 }
 
 .button-menu {
