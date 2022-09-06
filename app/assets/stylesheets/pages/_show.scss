@@ -39,8 +39,22 @@ p {
   font-size: 16px;
 }
 
+.review-scroller {
+  display: grid;
+  gap: 5%;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.review-element {
+  width: 93vw;
+}
+
+
 .blockquote {
   text-align: center;
+  grid-template-rows: min-content;
   width: 100%;
   margin-top: 15px;
   margin-bottom: 1rem;

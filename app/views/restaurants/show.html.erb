@@ -1,6 +1,6 @@
 <div class="show-page">
   <div class="class1">
-    <%= image_tag "pizza.jpg", class:"card-image" %>
+    <%= image_tag "pizza.jpg", class:"card-image rounded-top" %>
     <%= link_to restaurants_path, class:"btn btn-arrow" do %>
       <%= image_tag"down_button.png" %>
     <% end %>
@@ -51,14 +51,16 @@
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
-
-        <div class="review" >
-          <p><b>Reviews:</b></p>
+        <br>
+        <p><b>Reviews:</b></p>
+        <div class="review-scroller" >
           <% @restaurant.reviews.each do |review| %>
-            <blockquote class="blockquote">
-              <p><%= review.text %></p>
-              <p><%= review.author_name %> </p>
-            </blockquote>
+            <div class="review-element">
+              <blockquote class="blockquote">
+                <p><%= review.text %></p>
+                <p><%= review.author_name %> </p>
+              </blockquote>
+            </div>
           <% end %>
         </div>
       </div>
