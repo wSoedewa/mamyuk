@@ -39,6 +39,7 @@
 }
 .secondary-button {
   background-color: $green;
+  border: 2px solid $gray;
   box-shadow:
     3px 3px 0 0 $green,
     inset 3px 3px 0 0 white;
@@ -102,6 +103,7 @@
   border: 2px solid $gray;
   background-color: $red;
   font-size: 35px;
+  color: white;
   margin: 10px;
   width: 70px;
   height: 70px;
@@ -150,13 +152,22 @@
 .new-list-button {
   border: 2px solid $gray;
   color: $gray;
+  width: 50px;
+  height: 50px;
 }
 
-.back-link {
+.link-text {
   color: $gray;
 }
 
 .add-list-button {
   display: flex;
-  justify-content: flex-end;  
+  justify-content: flex-end;
+}
+
+.favorite-icon {
+  background: none;
+  border: none;
+  font-size: x-large;
+  color: $gray;
 }

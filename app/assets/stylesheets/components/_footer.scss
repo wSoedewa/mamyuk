@@ -9,13 +9,10 @@
   justify-content: center;
   height: 50px;
   padding: 10px 10px;
-
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-
   border-color: #E1EBEB;
-
 }
 .footer-links {
   display: flex;
@@ -37,11 +34,10 @@
 
 .footer_icon {
 height: 25px;
-
 }
 
 .page-container {
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
-  }
+}
