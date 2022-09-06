@@ -10,6 +10,7 @@ require "open-uri"
 puts "Cleaning database..."
 Booking.destroy_all
 Favorite.destroy_all
+Booking.destroy_all
 List.destroy_all
 Review.destroy_all
 Restaurant.destroy_all

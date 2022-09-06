@@ -71,8 +71,10 @@
         <div class="review" >
           <p>Reviews:</p>
           <% @restaurant.reviews.each do |review| %>
-            <p><%= review.text %></p>
-            <p><%= review.author_name %> </p>
+            <blockquote class="blockquote">
+              <p><%= review.text %></p>
+              <p><%= review.author_name %> </p>
+            </blockquote>
           <% end %>
         </div>
       </div>
