@@ -1,26 +1,43 @@
-<div class="container">
-
-  <div class="list-container">
-    <div class="list-header">
+<div class="list-container">
+  <div class="list-header">
       <h1>Lists</h1>
-      <%= link_to new_list_path do %>
-        <i class="fa-solid fa-plus"></i>
-      <% end %>
-    </div>
-        <div class="list">
-          <% @lists.each do |list| %>
-                  <%= link_to list_path(list) do %>
-            <div class="list-box">
-              <ul>
-                <div class="list-desc">
-                    <li>
-                      <h2><%= list.name %></h2>
-                    </li>
-                </div>
-              </ul>
+      <button type="button" class="btn btn-primary new-list-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Create New List
+      </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New List</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <%= simple_form_for @list do |f| %>
+                  <%= f.input :name %>
+                  <%= f.button :submit  %>
+                <% end %>
+              </div>
+              <div class="modal-footer">
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="list">
+        <% @lists.each do |list| %>
+          <%= link_to list_path(list) do %>
+          <div class="list-box">
+            <ul>
+              <div class="list-desc">
+                <li>
+                  <h2><%= list.name %></h2>
+                </li>
+              </div>
+            </ul>
+          </div>
           <% end %>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
