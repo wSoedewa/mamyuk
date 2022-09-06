@@ -5,4 +5,13 @@
       <%= render 'shared/restaurant_card', restaurant: fave.restaurant %>
     <% end %>
   </ul>
+  <div>
+    <%= link_to "Delete",
+    list_path(@list),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </div>
+  <div>
+    <%= link_to "Back to selections", restaurants_path, class: "button-base menu-button" %>
+  </div>
 </div>
