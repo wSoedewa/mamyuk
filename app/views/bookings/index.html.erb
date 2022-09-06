@@ -1,8 +1,10 @@
-<h1 class="bookingh1">Booking</h1><% @bookings.each do |booking| %>
-  <div class="card-booking">
-    <div class="card-body-booking">
-      <%= booking.restaurant.name %>
-      <%= booking.restaurant.cuisine %>
+<div class="booking_container">
+  <h1 class="bookingh1">Booking</h1><% @bookings.each do |booking| %>
+    <div class="card-booking">
+      <div class="card-body-booking">
+        <%= booking.restaurant.name %>
+        <%= booking.restaurant.cuisine %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
