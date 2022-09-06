@@ -51,13 +51,15 @@
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
-      <div class="review" >
-        <p>Reviews:</p>
-          <blockquote class="blockquote">
-            <p>“Amazing Pizza! Will come back again”</p>
-            <p>-Matteo Vigolo</p>
-          </blockquote>
+
+        <div class="review" >
+          <p>Reviews:</p>
+          <% @restaurant.reviews.each do |review| %>
+            <p><%= review.text %></p>
+            <p><%= review.author_name %> </p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  </div>
