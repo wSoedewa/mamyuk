@@ -9,6 +9,7 @@ class FavoritesController < ApplicationController
     @favorite.restaurant = @restaurant
     if @favorite.save
       flash[:notice] = "Saved!"
+      redirect_to restaurants_path
     else
       flash[:alert] = "[Error] Did not save."
     end
