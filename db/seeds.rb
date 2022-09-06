@@ -52,6 +52,42 @@ restaurants.each do |r|
   end
 end
 
+restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Italian", detail: true)
+pp restaurants
+restaurants.each do |r|
+  resto = Restaurant.new(
+    name: r.name,
+    price: r.price_level,
+    rating: r.rating,
+    location: r.formatted_address,
+    cuisine: "Italian",
+    phone_number: r.formatted_phone_number,
+    latitude: r.lat,
+    longitude: r.lng
+  )
+  unless resto.save
+    resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
+  end
+end
+
+restaurants = client.spots(-8.6541647, 115.1261915, types: ['bar'], name: "Bar", detail: true)
+pp restaurants
+restaurants.each do |r|
+  resto = Restaurant.new(
+    name: r.name,
+    price: r.price_level,
+    rating: r.rating,
+    location: r.formatted_address,
+    cuisine: "Bar",
+    phone_number: r.formatted_phone_number,
+    latitude: r.lat,
+    longitude: r.lng
+  )
+  unless resto.save
+    resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
+  end
+end
+
 puts "Creating users..."
 10.times do |i|
   u = User.create!(
