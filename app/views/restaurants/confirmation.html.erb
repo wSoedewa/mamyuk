@@ -10,11 +10,11 @@
     <div class="modal-content">
 
       <div class="modal-body">
-        0812 1234 5678
+        <%= @restaurant.phone_number %>
       </div>
       <div class="modal-footer">
         <%# <%= link_to "Call now", bookings_path(id: @restaurant.id), data: {turbo_method: :post} %>
-        <%= link_to "Call now", "tel:0812 1234 5678" %>
+        <%= link_to "Call now", "tel:#{@restaurant.phone_number}" %>
       </div>
     </div>
   </div>

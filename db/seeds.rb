@@ -20,6 +20,7 @@ puts "Creating restaurants..."
 
 client = GooglePlaces::Client.new(ENV.fetch('GOOGLE_MAPS_KEY'))
 p client
+puts "Creating French restaurants..."
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "French", detail: true)
 pp restaurants
 restaurants.each do |r|
@@ -27,6 +28,7 @@ restaurants.each do |r|
     name: r.name,
     price: r.price_level,
     rating: r.rating,
+    user_ratings_total: r.json_result_object["user_ratings_total"],
     location: r.formatted_address,
     cuisine: "French",
     phone_number: r.formatted_phone_number,
@@ -55,6 +57,7 @@ restaurants.each do |r|
   end
 end
 
+puts "Creating Indo restaurants..."
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Indonesian", detail: true)
 pp restaurants
 restaurants.each do |r|
@@ -62,6 +65,7 @@ restaurants.each do |r|
     name: r.name,
     price: r.price_level,
     rating: r.rating,
+    user_ratings_total: r.json_result_object["user_ratings_total"],
     location: r.formatted_address,
     cuisine: "Indonesian",
     phone_number: r.formatted_phone_number,
@@ -90,6 +94,8 @@ restaurants.each do |r|
   end
 end
 
+puts "Creating Italian restaurants..."
+
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Italian", detail: true)
 pp restaurants
 restaurants.each do |r|
@@ -97,6 +103,7 @@ restaurants.each do |r|
     name: r.name,
     price: r.price_level,
     rating: r.rating,
+    user_ratings_total: r.json_result_object["user_ratings_total"],
     location: r.formatted_address,
     cuisine: "Italian",
     phone_number: r.formatted_phone_number,
@@ -127,6 +134,8 @@ restaurants.each do |r|
   end
 end
 
+puts "Creating Bar restaurants..."
+
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['bar'], name: "Bar", detail: true)
 pp restaurants
 restaurants.each do |r|
@@ -134,6 +143,7 @@ restaurants.each do |r|
     name: r.name,
     price: r.price_level,
     rating: r.rating,
+    user_ratings_total: r.json_result_object["user_ratings_total"],
     location: r.formatted_address,
     cuisine: "Bar",
     phone_number: r.formatted_phone_number,

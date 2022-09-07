@@ -23,42 +23,16 @@
   </div>
   <div class="class2">
     <div class="container">
-      <h1><b><%= @restaurant.name %></b></h1>
-        <p class="rating mt-2"><b>Rating: </b><%= image_tag "star_icon.png" %> <%= @restaurant.rating %></p>
+      <h1><%= @restaurant.name %></h1>
+        <p>Rating: <%= image_tag "star_icon.png" %> <%= @restaurant.rating %></p>
         <% if @restaurant.price  %>
-          <p><b>Price: </b><%= "$" * @restaurant.price %></p>
+          <p>Price: <%= "$" * @restaurant.price %></p>
         <% else %>
-          <p> <b>Price: </b>N/A </p>
+          <p> Price: N/A </p>
         <% end %>
-        <p><b>Phone: </b><%= @restaurant.phone_number %></p>
-        <p><b>Favorite Menus:</b></p>
-      <div class="favorite-menu">
-        <div>
-          <blockquote class="menu-block">
-            <p>Pizza Marinara</p>
-          </blockquote>
-        </div>
-        <div>
-          <blockquote class="menu-block">
-            <p>Pizza Tutti Fruity</p>
-          </blockquote>
-        </div>
-        <div>
-          <blockquote class="menu-block">
-            <p>Bolognese</p>
-          </blockquote>
-        </div>
-        <div>
-          <blockquote class="menu-block">
-            <p>Spaghetti Carbonara</p>
-          </blockquote>
-        </div>
-      </div>
-      <div class="button-base menu-button">
-        <%= link_to "Check Full Menu", "#" %>
-      </div>
+        <p>Phone: <%= link_to "#{@restaurant.phone_number}", "tel:#{@restaurant.phone_number}" %>
       <div class="location">
-          <p><b>Location: </b><%= @restaurant.location %></p>
+          <p>Location: <%= @restaurant.location %></p>
       </div>
       <div>
         <%# <%= image_tag"map.png", class:"map-image" %>
@@ -67,17 +41,29 @@
             data-map-markers-value="<%= @markers.to_json %>"
             data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
           </div>
-        <br>
-        <p><b>Reviews:</b></p>
-        <div class="review-scroller" >
-          <% @restaurant.reviews.each do |review| %>
-            <div class="review-element">
-              <blockquote class="blockquote">
-                <p><%= review.text %></p>
-                <p><%= review.author_name %> </p>
-              </blockquote>
+
+        <div class="review" >
+          <p>Reviews:</p>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <% @restaurant.reviews.each_with_index do |review, index| %>
+                  <div class="carousel-item <%= "active" if index == 0 %>">
+                      <blockquote class="blockquote">
+                        <p><%= review.text %></p>
+                        <p><%= review.author_name %> </p>
+                      </blockquote>
+                  </div>
+                <% end %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-          <% end %>
         </div>
       </div>
     </div>
