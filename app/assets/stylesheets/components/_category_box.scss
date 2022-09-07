@@ -17,24 +17,26 @@
   text-align: center;
   grid-template-rows: min-content;
   padding: 3px;
+
 }
 
 .title {
   margin-bottom: 1px;
   font-size: 16px;
 }
-  .img-category {
-    width: 270px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 10px;
-   box-shadow:
-    0.3em 0.3em 0 0 $gray,
-    inset 0.3em 0.3em 0 0 white;
 
-    &:hover {
-      box-shadow:
-    0.3em 0.3em 0 0 $yellow,
-    inset 0.3em 0.3em 0 0 white;
-    }
+.img-category {
+  width: 270px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow:
+  0.3em 0.3em 0 0 $gray,
+  inset 0.3em 0.3em 0 0 white;
+
+  &:hover {
+    box-shadow:
+  0.3em 0.3em 0 0 $yellow,
+  inset 0.3em 0.3em 0 0 white;
   }
+}
