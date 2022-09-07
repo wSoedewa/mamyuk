@@ -36,7 +36,7 @@
           <p>Phone: N/A</p>
         <% end %>
       <div class="location">
-          <p>Location: <%= @restaurant.location %></p>
+          <p>Location: <%= link_to @restaurant.location, "http://maps.google.com?q=#{@restaurant.latitude},#{@restaurant.longitude}", target: :_blank %></p>
       </div>
       <div>
         <%# <%= image_tag"map.png", class:"map-image" %>
