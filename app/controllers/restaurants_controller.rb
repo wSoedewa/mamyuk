@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
                    .near([-8.65417, 115.1306762], session[:distance])
                    .where(query,  "%#{session[:category_chosen]}%", "%#{session[:category_chosen]}%", session[:budget_chosen].length)
                    .order(rating: :desc)
+                   .limit(3)
     @favorite = Favorite.new
   end
 

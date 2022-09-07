@@ -6,7 +6,7 @@
       </div>
       <div id="carousel-resto" class="carousel slide" data-bs-ride="carousel" data-bs-interval="60000" data-controller="reject-buttons">
         <div class="carousel-inner">
-          <% @restaurants.limit(3).each_with_index do |restaurant, index| %>
+          <% @restaurants.each_with_index do |restaurant, index| %>
             <div id="card-<%= restaurant.id %>" class="carousel-item <%= 'active' if index.zero? %>" data-reject-buttons-target="reject">
               <%= render 'shared/restaurant_card', restaurant: restaurant %>
               <div class="buttons">
@@ -42,7 +42,12 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+        <div class="d-none" data-reject-buttons-target="more" >
+          <h2>More Choices</h2>
+          <%= link_to "Click Here", food_choice_path, class:"choices" %>
+        </div>
       </div>
+
     </div>
 
   </div>

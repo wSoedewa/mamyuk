@@ -1,10 +1,10 @@
 <div class="container">
   <h1><%= @list.name %></h1>
-  <ul>
+  <%# <ul> %>
     <% @favorites.each do |fave| %>
       <%= render 'shared/restaurant_card', restaurant: fave.restaurant %>
     <% end %>
-  </ul>
+  <%# </ul> %>
   <div class="delete-link">
     <%= link_to "Delete list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-text" %>
   </div>

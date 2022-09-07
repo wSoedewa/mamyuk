@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="reject-buttons"
 export default class extends Controller {
-  static targets = ["reject", "next"]
+  static targets = ["reject", "next", "more"]
 
   connect() {
     console.log("hello")
@@ -16,5 +16,10 @@ export default class extends Controller {
         target.remove();
       }
     })
+
+    if(this.rejectTargets.length==0) {
+      console.log("habis")
+      this.moreTarget.classList.remove("d-none")
+    }
   }
 }
