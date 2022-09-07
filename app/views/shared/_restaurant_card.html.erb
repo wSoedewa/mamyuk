@@ -37,7 +37,7 @@
           <% if user_signed_in? %>
             <%= simple_form_for [restaurant, @favorite] do |f| %>
               <%= f.input :list_id, collection: current_user.lists %>
-              <%= f.button :submit, 'Save' %>
+              <%= f.button :submit, 'Save', class: "btn secondary-button" %>
             <% end %>
           <% else %>
             <%= link_to "Please login", new_user_session_path %>
