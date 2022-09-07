@@ -16,6 +16,8 @@
 
   &:hover {
     box-shadow: none;
+    text-decoration: none;
+    color: $gray;
   }
 
   a {
@@ -163,6 +165,9 @@
 .add-list-button {
   display: flex;
   justify-content: flex-end;
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
 }
 
 .favorite-icon {

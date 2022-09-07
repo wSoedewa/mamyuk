@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/food-choice-4', to: "pages#loading_results"
 
   get '/search', to: "pages#search"
-  get '/confirmation', to: "restaurants#confirmation"
+  get '/confirmation/:id', to: "restaurants#confirmation", as: :confirmation
   resources :bookings, only: %i[index show]
 
 

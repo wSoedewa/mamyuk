@@ -1,35 +1,16 @@
-<%= turbo_frame_tag "search_2_tag" do %>
-  <%= turbo_frame_tag "search_3_tag" do %>
-    <div class="title">
-      <h1>What is your budget?</h1>
-    </div>
-    <div class="budget_buttons pt-5">
-    <% Restaurant::BUDGETS.each do |budget| %>
-      <%= link_to food_choice_3_path(budget_chosen:budget) do%>
-        <p class="budget_button button-base primary-button"><%= budget %></p>
-    </div>
-  <!--
-  <div class="budget_buttons pt-5">
-    <div class="budget_button button-base primary-button">
-      <%= link_to "$" %>
-    </div>
-    <div class="budget_button button-base primary-button">
-      <%= link_to "$$" %>
-    </div>
-    <div class="budget_button button-base primary-button">
-      <%= link_to "$$$" %>
-    </div>
-    <div class="budget_button button-base primary-button">
-      <%= link_to "$$$$" %>
-    </div>
-  </div>
-    <div class="home_button">
-      <div class="button-base primary-button mx-auto">
-        <%= link_to "Next",  food_choice_3_path %>
+<div class="container">
+  <%= turbo_frame_tag "search_2_tag" do %>
+    <%= turbo_frame_tag "search_3_tag" do %>
+      <div class="title">
+        <h1>What is your budget?</h1>
       </div>
-    </div>
-  -->
-      <% end %>
+      <div class="budget_buttons pt-5">
+        <% Restaurant::BUDGETS.each do |budget| %>
+          <%= link_to food_choice_3_path(budget_chosen:budget) do%>
+            <p class="budget_button button-base primary-button"><%= budget %></p>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
-<% end %>
+</div>
