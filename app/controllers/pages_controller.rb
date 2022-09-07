@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :search, :components, :search_1, :search_2, :search_3, :loading_results ]
 
   def home
   end

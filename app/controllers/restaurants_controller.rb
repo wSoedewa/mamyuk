@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show, :confirmation]
   def index
     query = <<~SQL
     (name ILIKE ? or cuisine ILIKE ?) AND

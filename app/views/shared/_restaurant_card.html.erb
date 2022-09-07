@@ -33,9 +33,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <%= simple_form_for [restaurant, @favorite] do |f| %>
-            <%= f.input :list_id, collection: current_user.lists %>
-            <%= f.button :submit, 'Save' %>
+          <% if user_signed_in? %>
+            <%= simple_form_for [restaurant, @favorite] do |f| %>
+              <%= f.input :list_id, collection: current_user.lists %>
+              <%= f.button :submit, 'Save' %>
+            <% end %>
+          <% else %>
+            <%= link_to "Please login", new_user_session_path %>
           <% end %>
         </div>
       </div>
