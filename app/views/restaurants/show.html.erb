@@ -53,6 +53,7 @@
                 <% @restaurant.reviews.each_with_index do |review, index| %>
                   <div class="carousel-item <%= "active" if index == 0 %>">
                       <blockquote class="blockquote">
+                      <br>
                         <p><%= review.text %></p>
                         <p><%= review.author_name %> </p>
                       </blockquote>

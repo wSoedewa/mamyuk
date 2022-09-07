@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="see-results"
 export default class extends Controller {
   connect() {
-    var delayInMilliseconds = 3000; //1 second
+    var delayInMilliseconds = 3000;
 
     setTimeout(function() {
   //your code to be executed after 1 second
