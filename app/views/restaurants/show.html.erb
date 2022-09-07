@@ -30,7 +30,11 @@
         <% else %>
           <p> Price: N/A </p>
         <% end %>
-        <p>Phone: <%= link_to "#{@restaurant.phone_number}", "tel:#{@restaurant.phone_number}" %>
+        <% if @restaurant.phone_number %>
+          <p>Phone: <%= link_to "#{@restaurant.phone_number}", "tel:#{@restaurant.phone_number}" %>
+        <% else %>
+          <p>Phone: N/A</p>
+        <% end %>
       <div class="location">
           <p>Location: <%= @restaurant.location %></p>
       </div>

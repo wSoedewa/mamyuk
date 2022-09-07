@@ -26,5 +26,6 @@ class RestaurantsController < ApplicationController
 
   def confirmation
     @restaurant = Restaurant.find(params[:id])
+    @favorite = Favorite.new
   end
 end
