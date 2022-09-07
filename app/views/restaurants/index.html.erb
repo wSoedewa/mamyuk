@@ -18,9 +18,15 @@
                   </div>
                   <div class="col-6">
                     <div class="accept-button">
-                      <%= link_to restaurant_bookings_path(restaurant), data: { turbo_method: :post } do  %>
+                    <% if current_user %>
+                      <%= link_to restaurant_bookings_path(restaurant), data: { turbo_method: @method } do  %>
                         <i class="fa-solid fa-check"></i>
                       <% end %>
+                    <% else %>
+                      <%= link_to confirmation_path(id: restaurant.id) do  %>
+                          <i class="fa-solid fa-check"></i>
+                      <% end %>
+                    <% end %>
                     </div>
                   </div>
                 </div>

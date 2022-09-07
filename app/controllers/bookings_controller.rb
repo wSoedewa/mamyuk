@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def index
     @bookings = Booking.all
   end
@@ -10,7 +11,7 @@ class BookingsController < ApplicationController
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @booking = Booking.new(restaurant: @restaurant, user_id: current_user.id)
-    if @booking.save
+    if @booking.save!
       redirect_to confirmation_path(id: @restaurant.id)
     else
       render :new
