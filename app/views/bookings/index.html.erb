@@ -1,7 +1,7 @@
 <div class="container">
-  <h1 class="booking-h1">Your Past Visits</h1><% @bookings.each do |booking| %>
-      <%= render "shared/restaurant_card", restaurant: booking.restaurant %>
-    <% end %>
-  </div>
+  <h1 class="booking-h1">Your Past Visits</h1>
+  <%= link_to "Back to selections", restaurants_path, class: "link-text" %>
+  <% @bookings.each do |booking| %>
+    <%= render "shared/restaurant_card", restaurant: booking.restaurant, class: "visits-card" %>
+  <% end %>
 </div>
-
