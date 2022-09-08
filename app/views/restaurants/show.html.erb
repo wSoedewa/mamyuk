@@ -26,17 +26,17 @@
       <h1><b><%= @restaurant.name %></b></h1>
         <p><b>Rating: </b><%= image_tag "star_icon.png" %> <%= @restaurant.rating %></p>
         <% if @restaurant.price  %>
-          <p>Price: <b></b> <%= "$" * @restaurant.price %></p>
+          <p><b>Price: </b> <%= "$" * @restaurant.price %></p>
         <% else %>
           <p> <b>Price: </b>  N/A </p>
         <% end %>
         <% if @restaurant.phone_number %>
-          <p><b>Phone: </b> <%= link_to "#{@restaurant.phone_number}", "tel:#{@restaurant.phone_number}" %>
+          <p><b>Phone: </b> <%= link_to "#{@restaurant.phone_number}", "tel:#{@restaurant.phone_number}", class:"link_address" %> <%= image_tag "icon_link.svg",  height: 14 %>
         <% else %>
           <p><b>Phone: </b>N/A</p>
         <% end %>
       <div class="location">
-          <p><b>Location: </b><%= link_to @restaurant.location, "http://maps.google.com?q=#{@restaurant.latitude},#{@restaurant.longitude}", target: :_blank, class:"link_address_restaurant" %> <%= image_tag "icon_link.svg",  height: 14 %></p>
+          <p><b>Location: </b><%= link_to @restaurant.location, "http://maps.google.com?q=#{@restaurant.latitude},#{@restaurant.longitude}", target: :_blank, class:"link_address" %> <%= image_tag "icon_link.svg",  height: 14 %></p>
       </div>
       <div>
         <%# <%= image_tag"map.png", class:"map-image" %>
