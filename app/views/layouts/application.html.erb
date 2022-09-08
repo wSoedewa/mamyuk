@@ -40,7 +40,7 @@
   <%= render "shared/flashes" %>
     <div class="page-container">
     <div class="navbar-container"><%= render "shared/navbar" %></div>
-    <div class="content-container"><%= yield %></div>
+    <div class="content-container <%= 'cancel' if action_name == "show" && controller_name == "restaurants" %>"><%= yield %></div>
     <div class="footer-container"><%= render "shared/footer" %></div>
     </div>
   </body>

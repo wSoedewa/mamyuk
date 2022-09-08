@@ -7,6 +7,10 @@
 .content-container {
   display: grid;
   justify-content: center;
+
+  &.cancel {
+    justify-content: unset;
+  }
 }
 
 .index-header {
