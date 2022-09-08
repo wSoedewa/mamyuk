@@ -1,16 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div class="logo_location">
-      <% if user_signed_in? %>
-        <%= link_to root_path, class: "navbar-location" do %>
-          <%= image_tag "vector2.png" %>
-          <p class="location_name">Canggu</p>
-        <% end %>
-      <% else %>
         <%= link_to root_path, class: "navbar-brand" do %>
           <%= image_tag "mamyuk.png"%>
         <% end %>
-      <% end %>
     </div>
     <div class="dropdown">
   <button class="button-menu btn dropdown-color:white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
