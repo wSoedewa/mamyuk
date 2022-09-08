@@ -1,6 +1,6 @@
 .card-trip {
   overflow: hidden;
-  background: #FACA5B;
+  // background: #FACA5B;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 3%;
   border: 2px solid black;
@@ -41,6 +41,7 @@
     color: #ffffff ;
     width: 100%;
     border-radius: 0px 0px 10px 10px;
+    backdrop-filter: blur(5px);
 }
 
   .info {
@@ -105,4 +106,8 @@
   font-size: 42px;
   font-weight: bold;
   text-align: center;
+}
+
+.fa-solid.fa-heart {
+  color: red;
 }

@@ -38,29 +38,24 @@
       <div class="location">
           <p><b>Location: </b><%= link_to @restaurant.location, "http://maps.google.com?q=#{@restaurant.latitude},#{@restaurant.longitude}", target: :_blank, class:"link_address" %> <%= image_tag "icon_link.svg",  height: 14 %></p>
       </div>
-      <div>
-        <%# <%= image_tag"map.png", class:"map-image" %>
-          <div class="map-image" style="width: 100%; height: 170px;"
-            data-controller="map"
-            data-map-markers-value="<%= @markers.to_json %>"
-            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div>
+      <div class="map-image" style="width: 100%; height: 170px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+      <br>
+      <p><b>Reviews:</b></p>
+      <div class="review-scroller" >
+        <% @restaurant.reviews.each do |review| %>
+          <div class="review-element">
+            <blockquote class="blockquote">
+              <p><%= review.text %></p>
+              <p><%= review.author_name %> </p>
+            </blockquote>
           </div>
-
-
-        <br>
-          <p><b>Reviews:</b></p>
-          <div class="review-scroller" >
-            <% @restaurant.reviews.each do |review| %>
-              <div class="review-element">
-                <blockquote class="blockquote">
-                  <p><%= review.text %></p>
-                  <p><%= review.author_name %> </p>
-                </blockquote>
-              </div>
-            <% end %>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
-  </div>
+</div>

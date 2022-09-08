@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     if @booking.save!
       redirect_to confirmation_path(id: @restaurant.id)
     else
+      flash[:alert] = "List already exists."
       render :new
     end
   end
