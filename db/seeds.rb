@@ -57,6 +57,43 @@ restaurants.each do |r|
   end
 end
 
+puts "Creating Greek restaurants..."
+restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Greek", detail: true)
+pp restaurants
+restaurants.each do |r|
+  resto = Restaurant.new(
+    name: r.name,
+    price: r.price_level,
+    rating: r.rating,
+    user_ratings_total: r.json_result_object["user_ratings_total"],
+    location: r.formatted_address,
+    cuisine: "Greek",
+    phone_number: r.formatted_phone_number,
+    latitude: r.lat,
+    longitude: r.lng,
+  )
+  unless resto.save
+    resto = Restaurant.find_by(name: r.name, location: r.formatted_address)
+  end
+  puts "Creating review for #{resto.name}"
+  r.reviews.first(5).each do |review|
+    review = Review.new(
+    text: review.text,
+    author_name: review.author_name,
+    rating: review.rating,
+    restaurant_id: resto.id
+    )
+    review.save
+  end
+
+  r.photos.first(2).each do |photo|
+    url = photo.fetch_url(500)
+    file = URI.open(url)
+    resto.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+    resto.save
+  end
+end
+
 puts "Creating Indo restaurants..."
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Indonesian", detail: true)
 pp restaurants
@@ -95,7 +132,6 @@ restaurants.each do |r|
 end
 
 puts "Creating Italian restaurants..."
-
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['restaurant', 'food'], name: "Italian", detail: true)
 pp restaurants
 restaurants.each do |r|
@@ -135,7 +171,6 @@ restaurants.each do |r|
 end
 
 puts "Creating Bar restaurants..."
-
 restaurants = client.spots(-8.6541647, 115.1261915, types: ['bar'], name: "Bar", detail: true)
 pp restaurants
 restaurants.each do |r|
