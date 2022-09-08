@@ -48,7 +48,7 @@ p {
 }
 
 .review-element {
-  width: 93vw;
+  width: 86vw;
 }
 
 
@@ -138,4 +138,14 @@ z-index: 2;
 
 .button-base {
   width: 100%;
+}
+
+.link_address_restaurant {
+  color: $gray;
+  text-decoration: none;
+
+  &:hover {
+    color: $gray;
+    text-decoration: none;
+  }
 }
