@@ -1,68 +1,66 @@
-<div class="container">
-  <div class="card-trip">
-      <% if restaurant.photos.attached? %>
-      <%= cl_image_tag restaurant.photos[0].key %>
+<div class="card-trip">
+    <% if restaurant.photos.attached? %>
+    <%= cl_image_tag restaurant.photos[0].key %>
+    <% else %>
+    <%= image_tag "pizza.jpg" %>
+    <% end %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= restaurant.name %></h2>
+      <p> <%= restaurant.cuisine %></p>
+      <p><i class="fa-regular fa-star"></i> <%= restaurant.rating %></p>
+      <p><%= restaurant.user_ratings_total %> Reviews</p>
+    </div>
+    <div class="d-flex">
+      <!-- Button trigger modal -->
+      <% if user_signed_in? && current_user.favorites.pluck(:restaurant_id).include?(restaurant.id) %>
+        <i class="fa-solid fa-heart btn favorite-icon"></i>
+
+        <%# hati merah %>
       <% else %>
-      <%= image_tag "pizza.jpg" %>
+
+        <button type="button" class="favorite-icon" data-bs-toggle="modal" data-bs-target="#exampleModal<%= restaurant.id %>">
+        <%# <button onclick="Toggle1"() id="btnh1" class="btn"><i class="fa-sharp fa-solid fa-heart"></i></button> %>
+          <%# hati putih %>
+          <i class="fa-regular fa-heart"></i>
+        </button>
       <% end %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= restaurant.name %></h2>
-        <p> <%= restaurant.cuisine %></p>
-        <p><i class="fa-regular fa-star"></i> <%= restaurant.rating %></p>
-        <p><%= restaurant.user_ratings_total %> Reviews</p>
-      </div>
-      <div class="d-flex">
-        <!-- Button trigger modal -->
-        <% if user_signed_in? && current_user.favorites.pluck(:restaurant_id).include?(restaurant.id) %>
-          <i class="fa-solid fa-heart btn favorite-icon"></i>
-
-          <%# hati merah %>
-        <% else %>
-
-          <button type="button" class="favorite-icon" data-bs-toggle="modal" data-bs-target="#exampleModal<%= restaurant.id %>">
-          <%# <button onclick="Toggle1"() id="btnh1" class="btn"><i class="fa-sharp fa-solid fa-heart"></i></button> %>
-            <%# hati putih %>
-            <i class="fa-regular fa-heart"></i>
-          </button>
-        <% end %>
-          <script>
-          var btnvar1 = document.getElementById('btnh1');
-          function Toggle1() {
-                    if (btnvar1.style.color =="red") {
-                        btnvar1.style.color = "white"
-                    }
-                    else{
-                      btnvar1.style.color = "red"
-                    }
+        <script>
+        var btnvar1 = document.getElementById('btnh1');
+        function Toggle1() {
+          if (btnvar1.style.color =="red") {
+              btnvar1.style.color = "white"
           }
-          </script>
-          <div class="info">
-          <%= link_to restaurant_path(restaurant) do %>
-            <i class="fa-solid fa-info"></i>
-          <% end %>
-          </div>
-      </div>
+          else{
+            btnvar1.style.color = "red"
+          }
+        }
+        </script>
+        <div class="info">
+        <%= link_to restaurant_path(restaurant) do %>
+          <i class="fa-solid fa-info"></i>
+        <% end %>
+        </div>
     </div>
   </div>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal<%= restaurant.id %>" tabindex="-1" aria-labelledby="exampleModal<%= restaurant.id %>Label" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModal<%= restaurant.id %>Label">Add to List</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <% if user_signed_in? %>
-            <%= simple_form_for [restaurant, @favorite] do |f| %>
-              <%= f.input :list_id, collection: current_user.lists %>
-              <%= f.button :submit, 'Save', class: "btn secondary-button" %>
-            <% end %>
-          <% else %>
-            <%= link_to "Please login", new_user_session_path %>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal<%= restaurant.id %>" tabindex="-1" aria-labelledby="exampleModal<%= restaurant.id %>Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal<%= restaurant.id %>Label">Add to List</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <% if user_signed_in? %>
+          <%= simple_form_for [restaurant, @favorite] do |f| %>
+            <%= f.input :list_id, collection: current_user.lists %>
+            <%= f.button :submit, 'Save', class: "btn secondary-button" %>
           <% end %>
-        </div>
+        <% else %>
+          <%= link_to "Please login", new_user_session_path %>
+        <% end %>
       </div>
     </div>
   </div>

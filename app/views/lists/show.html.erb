@@ -5,8 +5,9 @@
       <%= render 'shared/restaurant_card', restaurant: fave.restaurant %>
     <% end %>
   <%# </ul> %>
+
   <div class="delete-link">
-    <%= link_to "Delete list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-text" %>
+    <%= link_to "Delete list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-text text-start" %>
   </div>
   <div class="back-link">
     <%= link_to "Back to selections", restaurants_path, class: "link-text" %>
