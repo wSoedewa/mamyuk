@@ -20,6 +20,8 @@ export default class extends Controller {
     if(this.rejectTargets.length==0) {
       console.log("habis")
       this.moreTarget.classList.remove("d-none")
+      // Target the arrow buttons getElementById
+      // Add d-none
     }
   }
 }

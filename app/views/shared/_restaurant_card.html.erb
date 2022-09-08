@@ -14,9 +14,29 @@
       </div>
       <div class="d-flex">
         <!-- Button trigger modal -->
-        <button type="button" class="favorite-icon" data-bs-toggle="modal" data-bs-target="#exampleModal<%= restaurant.id %>">
-          <i class="fa-regular fa-heart"></i>
-        </button>
+        <% if current_user.favorites.pluck(:restaurant_id).include? restaurant.id %>
+          <i class="fa-solid fa-heart btn favorite-icon"></i>
+
+          <%# hati merah %>
+        <% else %>
+
+          <button type="button" class="favorite-icon" data-bs-toggle="modal" data-bs-target="#exampleModal<%= restaurant.id %>">
+          <%# <button onclick="Toggle1"() id="btnh1" class="btn"><i class="fa-sharp fa-solid fa-heart"></i></button> %>
+            <%# hati putih %>
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        <% end %>
+          <script>
+          var btnvar1 = document.getElementById('btnh1');
+          function Toggle1() {
+                    if (btnvar1.style.color =="red") {
+                        btnvar1.style.color = "white"
+                    }
+                    else{
+                      btnvar1.style.color = "red"
+                    }
+          }
+          </script>
           <div class="info">
           <%= link_to restaurant_path(restaurant) do %>
             <i class="fa-solid fa-info"></i>
