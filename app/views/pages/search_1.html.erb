@@ -1,19 +1,21 @@
-<div class="container">
+<section data-controller="animate-page">
   <%= turbo_frame_tag "search_tag" do %>
     <%= turbo_frame_tag "search_2_tag" do %>
       <div class="title">
         <h1>What do you feel like eating?</h1>
       </div>
-      <div class="media-scroller mt-5 pt-2">
-        <% Restaurant::CATEGORIES.each do |category| %>
-          <%= link_to food_choice_2_path(category_chosen:category[:name]), class:"category_title" do%>
-            <div class="media-element">
+      <div class="animate__animated" data-animate-page-target="searchOne" id="one">
+        <div class="media-scroller mt-5 pt-2">
+          <% Restaurant::CATEGORIES.each do |category| %>
+            <%= link_to food_choice_2_path(category_chosen:category[:name]), class:"category_title" do%>
+              <div class="media-element">
               <h3 class="name_category"><%= category[:name] %></h3>
               <img class="img-category" src="<%= category[:url] %>" alt="<%= category[:name] %>">
-            </div>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     <% end %>
   <% end %>
-</div>
+</section>
