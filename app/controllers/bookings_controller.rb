@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @favorite = Favorite.new
   end
 
   def show
