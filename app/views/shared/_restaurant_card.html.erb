@@ -14,7 +14,7 @@
       </div>
       <div class="d-flex">
         <!-- Button trigger modal -->
-        <% if current_user.favorites.pluck(:restaurant_id).include? restaurant.id %>
+        <% if user_signed_in? && current_user.favorites.pluck(:restaurant_id).include?(restaurant.id) %>
           <i class="fa-solid fa-heart btn favorite-icon"></i>
 
           <%# hati merah %>
