@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings.order(created_at: :desc)
     @favorite = Favorite.new
   end
 
