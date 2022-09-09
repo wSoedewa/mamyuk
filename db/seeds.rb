@@ -310,7 +310,7 @@ restaurants.each do |r|
     review.save
   end
 
-  r.photos.first(2).each do |photo|
+  r.photos.first(5).each do |photo|
     url = photo.fetch_url(500)
     file = URI.open(url)
     resto.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
